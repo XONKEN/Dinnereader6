@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3b82f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="今晚回家吃飯嗎">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-180.png">
+<title>今晚回家吃飯嗎？</title>
+<style>
+:root{--blue:#3b82f6;--blue2:#2563eb;--ink:#111827;--muted:#6b7280;--bg:#edf5ff;--card:rgba(255,255,255,.72);--line:rgba(255,255,255,.5);--danger:#ef4444;--green:#16a34a}*{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:radial-gradient(circle at 10% 0%,rgba(96,165,250,.18),transparent 30%),radial-gradient(circle at 100% 25%,rgba(129,140,248,.14),transparent 28%),var(--bg);color:var(--ink);padding-bottom:calc(92px + env(safe-area-inset-bottom));overflow-x:hidden}button,input,textarea{font:inherit}button{cursor:pointer}.app{max-width:520px;margin:0 auto;min-height:100vh;padding-bottom:120px}.top{padding:38px 20px 16px;padding-top:calc(38px + env(safe-area-inset-top))}.eyebrow{font-size:11px;letter-spacing:.2em;color:#6b7280}.title{font-size:24px;font-weight:800;margin:5px 0 0}.subtitle{font-size:14px;color:#6b7280;margin-top:5px}.versionmark{display:inline-block;margin-top:8px;padding:3px 7px;border-radius:999px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.7);color:#64748b;font-size:9px;font-weight:800;letter-spacing:.08em;box-shadow:0 3px 10px rgba(30,64,175,.06)}.section{padding:0 20px;margin-top:20px;padding-bottom:18px}.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue),var(--blue2));color:white;border-radius:22px;padding:22px;box-shadow:0 10px 28px rgba(59,130,246,.28)}.hero:after{content:"";position:absolute;right:-25px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.1)}.hero .small{font-size:13px;color:rgba(255,255,255,.82)}.hero .day{font-size:25px;font-weight:800;margin-top:14px}.hero .time{font-size:56px;line-height:1;font-weight:900;letter-spacing:-2px;margin-top:4px}.hero .body{font-size:14px;color:rgba(255,255,255,.82);margin-top:12px}.bell{position:absolute;right:16px;bottom:12px;font-size:46px;z-index:1}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.section-head h2{font-size:15px;margin:0}.count{font-size:12px;color:#6b7280}.dayrow,.card{background:var(--card);border:1px solid rgba(255,255,255,.68);border-radius:18px;box-shadow:0 8px 24px rgba(30,64,175,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.dayrow{display:flex;align-items:center;gap:12px;padding:13px 14px;margin:8px 0}.daynum{width:32px;height:32px;border-radius:10px;background:#eaf3ff;color:var(--blue2);display:grid;place-items:center;font-weight:800;font-size:13px}.dayinfo{flex:1;min-width:0}.dayname{font-size:14px;font-weight:700}.daytime{font-size:12px;color:#6b7280;margin-top:2px}.switch{width:46px;height:26px;border-radius:20px;border:0;background:#d1d5db;padding:3px;transition:.2s;flex:0 0 auto}.switch:after{content:"";display:block;width:20px;height:20px;border-radius:50%;background:white;transition:.2s;box-shadow:0 1px 3px #0002}.switch.on{background:var(--blue)}.switch.on:after{transform:translateX(20px)}.empty{padding:22px;text-align:center;color:#6b7280;font-size:14px}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);min-height:74px;padding:8px 16px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid #e5e7eb;display:flex;gap:6px;z-index:100}.nav{flex:1;border:0;background:transparent;border-radius:12px;padding:7px 4px;color:#6b7280;font-size:11px;min-width:0}.nav .ico{display:block;font-size:20px;line-height:22px;margin-bottom:2px}.nav.active{color:var(--blue2);background:#eff6ff;font-weight:700}.settingline{display:flex;align-items:center;gap:12px;padding:10px 0}.settingline+.settingline{border-top:1px solid #f0f0f0}.settingtext{flex:1;min-width:0}.settingtitle{font-size:14px;font-weight:700}.settingdesc{font-size:12px;color:#6b7280;margin-top:3px;line-height:1.5}.input{width:100%;border:0;background:#eef6ff;border-radius:10px;padding:10px 12px;outline:none;margin-top:5px}.timeinput{width:90px;border:0;background:#eef6ff;border-radius:9px;padding:7px 8px;text-align:center}.btn{width:100%;border:0;border-radius:11px;padding:12px;font-weight:700}.btn+.btn{margin-top:8px}.primary{background:var(--blue);color:white}.secondary{background:#eff6ff;color:var(--blue2)}.danger{background:#fff;color:var(--danger);border:1px solid #fee2e2}.choice{display:flex;gap:8px;margin-top:14px}.choice button{flex:1;padding:12px;border-radius:12px;border:0;font-weight:800}.homebtn{background:var(--blue);color:#fff}.awaybtn{background:#f3f4f6;color:#4b5563}.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(15px);opacity:0;pointer-events:none;background:#111827;color:#fff;padding:10px 15px;border-radius:999px;font-size:13px;z-index:200;transition:.25s;max-width:88%;text-align:center}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.log{display:flex;align-items:center;gap:12px}.logdate{flex:1}.badge{border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800;white-space:nowrap}.badge.home{background:var(--blue);color:white}.badge.away{background:#f3f4f6;color:#4b5563}.muted{color:#6b7280;font-size:13px}.notice{font-size:12px;color:#6b7280;line-height:1.6}.hide{display:none!important}.pill{display:inline-block;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;background:#eff6ff;color:var(--blue2)}.member{display:flex;align-items:center;gap:10px;padding:10px 0}.avatar{width:34px;height:34px;border-radius:50%;background:#eaf3ff;color:var(--blue2);display:grid;place-items:center;font-weight:800}.member .settingtext{flex:1}.msg{padding:11px 0;border-bottom:1px solid #f0f0f0}.msg:last-child{border-bottom:0}.msghead{display:flex;justify-content:space-between;gap:8px}.msgname{font-weight:800;font-size:13px}.msgtime{font-size:11px;color:#9ca3af}.msgbody{font-size:13px;color:#374151;margin-top:4px}.code{font-size:26px;letter-spacing:4px;font-weight:900;text-align:center;background:#eff6ff;border-radius:13px;padding:12px;color:var(--blue2)}.textarea{min-height:76px;resize:vertical}.smallbtn{width:auto;padding:9px 12px}.rowbuttons{display:flex;gap:8px}.rowbuttons>*{flex:1}.statusok{color:var(--green);font-weight:700}.statusbad{color:var(--danger);font-weight:700}.configbox{border:1px solid #dbeafe;background:#f8fbff;border-radius:14px;padding:12px;margin-top:10px}.confighint{font-size:12px;color:#64748b;line-height:1.6}.firebase-state{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:#f0fdf4;color:#15803d;font-size:12px;font-weight:700}.firebase-state.bad{background:#fff7ed;color:#c2410c}.actions-note{margin-top:10px;padding:10px 12px;border-radius:12px;background:#f8fafc;color:#64748b;font-size:11px;line-height:1.6}.choice{display:flex;gap:8px;margin-top:14px}.choice button{flex:1;padding:13px;border-radius:12px;border:0;font-weight:800}.homebtn{background:var(--blue);color:#fff}.awaybtn{background:#f3f4f6;color:#4b5563}.configtextarea{width:100%;min-height:150px;border:1px solid #dbeafe;background:#fff;border-radius:12px;padding:12px;outline:none;resize:vertical;font-size:12px;line-height:1.5} 
+.groupHero{background:linear-gradient(145deg,#0f172a,#1d4ed8 62%,#60a5fa);box-shadow:0 18px 40px rgba(30,64,175,.25)}
+.groupHero .groupbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:999px;font-size:11px;font-weight:800}
+.groupHero .day{font-size:28px;margin-top:12px}.groupHero .body{font-size:13px}.groupCode{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:15px}.groupCode strong{font-size:25px;letter-spacing:4px}.copymini{border:0;background:#fff;color:#1d4ed8;border-radius:10px;padding:8px 10px;font-weight:800;font-size:11px}.groupStats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:13px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:rgba(255,255,255,.75)}
+.groupTitle{display:flex;align-items:center;gap:10px}.groupIcon{width:38px;height:38px;border-radius:12px;background:#eff6ff;display:grid;place-items:center;font-size:20px}.groupCard{overflow:hidden}.section-label{font-size:11px;letter-spacing:.12em;color:#94a3b8;font-weight:800}.noticeEmpty{padding:18px 8px;text-align:center;color:#94a3b8;font-size:13px}.msg{padding:12px 0}.msgDot{width:9px;height:9px;border-radius:50%;background:#3b82f6;display:inline-block;margin-right:6px}.madeby{text-align:center;padding:2px 20px 28px;color:#94a3b8;font-size:11px;letter-spacing:.18em;font-weight:700}.madeby span{color:#64748b;letter-spacing:.08em}.firebase-state{margin-top:10px}
+
+/* v7 glass + motion */
+button,.btn,.nav,.switch,.choice button,.copymini{transition:transform .16s ease,box-shadow .2s ease,background .2s ease,opacity .2s ease}
+button:active{transform:scale(.96)}
+.btn:hover,.copymini:hover,.choice button:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(37,99,235,.16)}
+.nav:active{transform:translateY(1px) scale(.96)}
+.switch:active{transform:scale(.92)}
+.card,.dayrow,.hero{animation:fadeUp .35s ease both}
+.dayrow:nth-child(2){animation-delay:.03s}.dayrow:nth-child(3){animation-delay:.06s}.dayrow:nth-child(4){animation-delay:.09s}.dayrow:nth-child(5){animation-delay:.12s}.dayrow:nth-child(6){animation-delay:.15s}.dayrow:nth-child(7){animation-delay:.18s}.dayrow:nth-child(8){animation-delay:.21s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+ @media(min-width:700px){body{padding-bottom:20px}.app{box-shadow:0 0 40px rgba(0,0,0,.05)}}
+
+/* v8 UI refresh — visual-only; application logic unchanged */
+:root{
+  --blue:#3b82f6;--blue2:#2563eb;--ink:#0f172a;--muted:#64748b;
+  --bg:#eef4fb;--card:rgba(255,255,255,.62);--line:rgba(255,255,255,.72);
+}
+html{background:#eef4fb}
+body{
+  background:
+    radial-gradient(520px 360px at -8% -5%,rgba(96,165,250,.22),transparent 68%),
+    radial-gradient(460px 340px at 108% 12%,rgba(129,140,248,.18),transparent 66%),
+    linear-gradient(180deg,#f5f9ff 0%,#edf3fa 100%);
+  color:var(--ink);
+}
+.app{padding-left:2px;padding-right:2px}
+.top{padding-bottom:12px}
+.eyebrow{font-weight:800;letter-spacing:.18em;color:#64748b}
+.title{letter-spacing:-.025em}
+.subtitle{color:#718096}
+.versionmark{
+  background:rgba(255,255,255,.48);
+  border-color:rgba(255,255,255,.78);
+  box-shadow:0 6px 18px rgba(30,64,175,.08);
+}
+.section{margin-top:18px}
+.hero{
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(59,130,246,.96),rgba(37,99,235,.96));
+  box-shadow:0 18px 42px rgba(37,99,235,.20),inset 0 1px 0 rgba(255,255,255,.18);
+}
+.hero:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg,rgba(255,255,255,.10),transparent 42%);
+  pointer-events:none;
+}
+.hero:after{background:rgba(255,255,255,.12);filter:blur(2px)}
+.dayrow,.card{
+  background:linear-gradient(145deg,rgba(255,255,255,.70),rgba(255,255,255,.48));
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 10px 30px rgba(30,64,175,.07),inset 0 1px 0 rgba(255,255,255,.58);
+  backdrop-filter:blur(22px) saturate(135%);
+  -webkit-backdrop-filter:blur(22px) saturate(135%);
+}
+.dayrow{padding:14px 15px;border-radius:19px}
+.daynum,.groupIcon,.input,.timeinput,.secondary,.code,.configbox,.configtextarea{
+  background:rgba(239,246,255,.72);
+}
+.daynum{box-shadow:inset 0 1px 0 rgba(255,255,255,.75)}
+.section-head h2{letter-spacing:-.01em}
+.bottom{
+  background:rgba(255,255,255,.58);
+  border-top:1px solid rgba(255,255,255,.78);
+  box-shadow:0 -10px 30px rgba(30,64,175,.08);
+  backdrop-filter:blur(24px) saturate(145%);
+  -webkit-backdrop-filter:blur(24px) saturate(145%);
+}
+.nav{border:1px solid transparent}
+.nav.active{
+  background:rgba(239,246,255,.78);
+  border-color:rgba(147,197,253,.28);
+  box-shadow:0 4px 14px rgba(59,130,246,.08);
+}
+.settingline+.settingline,.msg{border-color:rgba(148,163,184,.14)}
+.input,.timeinput,.configtextarea{
+  border:1px solid rgba(191,219,254,.34);
+  box-shadow:inset 0 1px 2px rgba(30,64,175,.03);
+  transition:border-color .2s,box-shadow .2s,background .2s;
+}
+.input:focus,.timeinput:focus,.configtextarea:focus{
+  border-color:rgba(59,130,246,.48);
+  box-shadow:0 0 0 3px rgba(59,130,246,.10);
+  background:rgba(255,255,255,.78);
+}
+.btn{
+  box-shadow:0 5px 14px rgba(30,64,175,.06);
+}
+.primary{
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  box-shadow:0 8px 20px rgba(37,99,235,.18);
+}
+.secondary{border:1px solid rgba(147,197,253,.28)}
+.danger{background:rgba(255,255,255,.56);border-color:rgba(254,202,202,.6)}
+.choice button{box-shadow:0 5px 14px rgba(30,64,175,.07)}
+.firebase-state{background:rgba(240,253,244,.72)}
+.firebase-state.bad{background:rgba(255,247,237,.74)}
+.pill,.badge,.groupHero .groupbadge{
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.groupHero{
+  background:linear-gradient(145deg,rgba(15,23,42,.97),rgba(29,78,216,.96) 62%,rgba(96,165,250,.92));
+  box-shadow:0 20px 46px rgba(30,64,175,.20),inset 0 1px 0 rgba(255,255,255,.16);
+}
+.groupCode,.stat,.groupHero .groupbadge{
+  background:rgba(255,255,255,.10);
+}
+.toast{
+  background:rgba(15,23,42,.88);
+  box-shadow:0 10px 30px rgba(15,23,42,.20);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+@media(max-width:380px){
+  .top{padding-left:17px;padding-right:17px}
+  .section{padding-left:17px;padding-right:17px}
+  .hero .time{font-size:50px}
+}
+
+</style>
+</head>
+<body><div id="app"></div><div id="toast" class="toast"></div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script>
+(() => {
+'use strict';
+const DAYS=['星期一','星期二','星期三','星期四','星期五','星期六','星期日'],SHORT=['一','二','三','四','五','六','日'];
+const KEY='dinner-reminder-settings-v4',LOGKEY='dinner-reminder-logs-v4',USERKEY='dinner-reminder-user-v2',GROUPKEY='dinner-reminder-group-v2',FIREKEY='dinner-reminder-firebase-v2';
+function migrateLegacy(){try{if(!localStorage.getItem(KEY)&&localStorage.getItem('dinner-reminder-settings-v3'))localStorage.setItem(KEY,localStorage.getItem('dinner-reminder-settings-v3'));if(!localStorage.getItem(LOGKEY)&&localStorage.getItem('dinner-reminder-logs-v3'))localStorage.setItem(LOGKEY,localStorage.getItem('dinner-reminder-logs-v3'));if(!localStorage.getItem(FIREKEY)&&localStorage.getItem('dinner-reminder-firebase-v1'))localStorage.setItem(FIREKEY,localStorage.getItem('dinner-reminder-firebase-v1'));if(!localStorage.getItem(USERKEY)&&localStorage.getItem('dinner-reminder-user-v1'))localStorage.setItem(USERKEY,localStorage.getItem('dinner-reminder-user-v1'));if(!localStorage.getItem(GROUPKEY)&&localStorage.getItem('dinner-reminder-group-v1'))localStorage.setItem(GROUPKEY,localStorage.getItem('dinner-reminder-group-v1'));}catch(e){console.error('migration',e)}}
+migrateLegacy();
+const defaults={defaultTime:'19:00',notificationsOn:true,title:'吃飯時間到了 🍚',body:'今天要回家吃飯嗎？',replyHomeLabel:'回家吃飯',replyAwayLabel:'今天不回家',weekendOn:true,days:[1,0,1,1,0,1,1].map((enabled,i)=>({enabled:!!enabled,time:['19:00','19:00','19:00','19:30','19:00','18:30','19:00'][i]}))};
+let settings=load(KEY,defaults),logs=load(LOGKEY,[]),page='home',permission='',toastTimer=null,firedKey='',choiceBoxShown=false;
+let groupMembers=[],groupMessages=[],groupReady=false,groupInitialSnapshot=true,knownMessageIds=new Set();
+let fb={app:null,auth:null,db:null,user:null,groupId:localStorage.getItem(GROUPKEY)||'',unsubMembers:null,unsubMessages:null};
+function load(k,f){try{const x=localStorage.getItem(k);if(!x)return clone(f);const v=JSON.parse(x);if(k===KEY){v.days=Array.isArray(v.days)?v.days:clone(f.days);v.days=v.days.slice(0,7);while(v.days.length<7)v.days.push({enabled:false,time:v.defaultTime||'19:00'});return {...f,...v}}return Array.isArray(v)?v:f}catch{return clone(f)}}
+function clone(x){return JSON.parse(JSON.stringify(x))}
+function save(){localStorage.setItem(KEY,JSON.stringify(settings));localStorage.setItem(LOGKEY,JSON.stringify(logs))}
+function dayIndex(d=new Date()){return (d.getDay()+6)%7}
+function dateKey(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function active(i){return settings.notificationsOn&&(settings.weekendOn||i<5)&&!!settings.days[i]?.enabled}
+function nextReminder(){const now=new Date();for(let n=0;n<8;n++){const d=new Date(now);d.setDate(now.getDate()+n);const i=dayIndex(d);if(!active(i))continue;const [h,m]=(settings.days[i].time||settings.defaultTime).split(':').map(Number);d.setHours(h||0,m||0,0,0);if(d>now)return{i,time:settings.days[i].time,at:d}}return null}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(t){const el=document.getElementById('toast');if(!el)return;el.textContent=t;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200)}
+function nav(){return `<nav class="bottom"><button class="nav ${page==='home'?'active':''}" data-page="home"><span class="ico">🏠</span>首頁</button><button class="nav ${page==='days'?'active':''}" data-page="days"><span class="ico">📅</span>每日設定</button><button class="nav ${page==='history'?'active':''}" data-page="history"><span class="ico">📝</span>紀錄</button><button class="nav ${page==='group'?'active':''}" data-page="group"><span class="ico">👨‍👩‍👧</span>群組</button><button class="nav ${page==='settings'?'active':''}" data-page="settings"><span class="ico">⚙️</span>設定</button></nav>`}
+function header(label,title,sub){return `<header class="top"><div class="eyebrow">${label}</div><h1 class="title">${title}</h1><div class="subtitle">${sub}</div><div class="versionmark">v8</div></header>`}
+function home(){const n=nextReminder(),count=settings.days.filter((_,i)=>active(i)).length;let rows=DAYS.map((d,i)=>`<div class="dayrow"><div class="daynum">${SHORT[i]}</div><div class="dayinfo"><div class="dayname">${d}</div><div class="daytime">${active(i)?settings.days[i].time:'提醒關閉'}</div></div><button class="switch ${active(i)?'on':''}" data-toggle="${i}" aria-label="${d}提醒"></button></div>`).join('');return `${header('DINING REMINDER','今晚回家吃飯嗎？','本週提醒總覽')}<section class="section"><div class="hero"><div class="small">● 下一次提醒</div><div class="day">${n?DAYS[n.i]:'尚未設定'}</div><div class="time">${n?n.time:'--:--'}</div><div class="body">${esc(settings.body)}</div><div class="bell">🔔</div></div></section><section class="section"><div class="section-head"><h2>本週提醒</h2><span class="count">${count} 天已開啟</span></div>${rows}</section><div class="madeby">MADE BY <span>永程</span></div>${nav()}`}
+function days(){return `${header('SCHEDULE','每日設定','逐日調整提醒時間與開關')}<section class="section"><div class="card">${DAYS.map((d,i)=>`<div class="settingline"><div class="settingtext"><div class="settingtitle">${d}</div><div class="settingdesc">${active(i)?'已開啟提醒':'未開啟提醒'}</div></div><input class="timeinput" type="time" value="${esc(settings.days[i].time)}" data-time="${i}" ${settings.days[i].enabled?'':'disabled'}><button class="switch ${settings.days[i].enabled?'on':''}" data-toggle="${i}" aria-label="${d}提醒"></button></div>`).join('')}</div><div class="card"><div class="settingline"><div class="settingtext"><div class="settingtitle">週末提醒</div><div class="settingdesc">關閉後星期六、日不會提醒</div></div><button class="switch ${settings.weekendOn?'on':''}" data-weekend></button></div></div></section>${nav()}`}
+function settingsPage(){const firebaseReady=!!fb.db&&!!fb.user;return `${header('SETTINGS','設定','通知與 App 行為')}<section class="section"><div class="card"><div class="settingline"><div class="settingtext"><div class="settingtitle">提醒通知</div><div class="settingdesc">開啟後依每日設定提醒</div></div><button class="switch ${settings.notificationsOn?'on':''}" data-notify></button></div></div><div class="card"><div class="settingtitle">通知文字</div><label class="notice">標題<input class="input" data-title value="${esc(settings.title)}"></label><label class="notice">內容<input class="input" data-body value="${esc(settings.body)}"></label></div><div class="card"><div class="settingtitle">通知上的快速答覆</div><p class="notice">兩個按鈕的文字可以自己改。它們仍代表「回家」與「不回家」兩種結果。</p><label class="notice">選項一<input class="input" data-reply-home value="${esc(settings.replyHomeLabel)}" maxlength="24" placeholder="例如：我會回家"></label><label class="notice">選項二<input class="input" data-reply-away value="${esc(settings.replyAwayLabel)}" maxlength="24" placeholder="例如：今天不吃"></label><div class="choice"><button class="homebtn" data-preview-home>${esc(settings.replyHomeLabel)}</button><button class="awaybtn" data-preview-away>${esc(settings.replyAwayLabel)}</button></div></div><div class="card"><button class="btn primary" data-permission>允許手機通知</button><button class="btn secondary" data-test>立即測試通知</button><p class="notice">通知上的按鈕是否顯示，仍由手機瀏覽器與作業系統決定。</p></div><div class="card"><div class="settingtitle">家庭群組雲端</div><div class="${firebaseReady?'firebase-state':'firebase-state bad'}">${firebaseReady?'● Firebase 已連線':'○ 尚未連線 Firebase'}</div><p class="notice">只要貼上 Firebase Web App 的完整 SDK 設定即可，不需要單獨輸入 API Key。</p><button class="btn secondary" data-firebase>${firebaseReady?'重新設定 Firebase':'貼上 Firebase 設定'}</button><button class="btn primary" data-page="group">前往群組</button></div></section>${nav()}`}
+function groupPage(){
+  if(!fb.db||!fb.user)return `${header('FAMILY GROUP','家庭群組','把家人的晚餐回覆集中在一起')}<section class="section"><div class="card groupCard"><div class="groupTitle"><div class="groupIcon">☁️</div><div><div class="settingtitle">先連接 Firebase</div><div class="notice">連線後才能建立或加入家庭群組。</div></div></div><button class="btn primary" data-firebase style="margin-top:14px">設定 Firebase</button></div></section>${nav()}`;
+  if(!fb.groupId)return `${header('FAMILY GROUP','家庭群組','一個代碼，讓家人的晚餐回覆即時到齊')}<section class="section">${groupJoinCreate()}</section>${nav()}`;
+  const gname=localStorage.getItem('dinner-group-name-v2')||'家庭群組';
+  return `${header('FAMILY GROUP',esc(gname),'群組控制台 · 即時同步')}<section class="section"><div class="hero groupHero"><div class="groupbadge">● LIVE · 家庭群組</div><div class="day">${esc(gname)}</div><div class="body">${groupMembers.length} 位成員正在這個群組</div><div class="groupCode"><strong>${esc(fb.groupId)}</strong><button class="copymini" data-copy-code>複製</button></div><div class="groupStats"><div class="stat"><b>${groupMembers.length}</b><span>目前成員</span></div><div class="stat"><b>${Math.min(groupMessages.length,50)}</b><span>最近回覆</span></div></div></div></section><section class="section"><div class="card groupCard"><div class="section-head"><div class="groupTitle"><div class="groupIcon">👥</div><div><div class="settingtitle">成員</div><div class="notice">誰已經加入群組</div></div></div><span class="pill">即時</span></div><div id="members">${membersHtml()}</div></div><div class="card groupCard"><div class="section-head"><div class="groupTitle"><div class="groupIcon">🔔</div><div><div class="settingtitle">通知中心</div><div class="notice">所有人的晚餐答覆</div></div></div><span class="count">最近 ${Math.min(groupMessages.length,50)} 則</span></div><div id="messages">${messagesHtml()}</div></div><div class="card groupCard"><div class="section-label">GROUP SETTINGS</div><div class="settingtitle" style="margin-top:6px">你的暱稱</div><input class="input" data-nickname value="${esc(getName())}" maxlength="20"><p class="notice">修改後會同步更新到所有成員的畫面。</p><div class="rowbuttons" style="margin-top:8px"><button class="btn secondary smallbtn" data-copy-code>分享群組代碼</button><button class="btn danger smallbtn" data-leave-group>離開群組</button></div></div></section>${nav()}`;
+}
+
+function getName(){return localStorage.getItem(USERKEY)||'成員'}
+function groupJoinCreate(){return `<div class="card groupCard"><div class="section-label">YOUR PROFILE</div><div class="groupTitle" style="margin-top:6px"><div class="groupIcon">👤</div><div><div class="settingtitle">你的名稱</div><div class="notice">家人會用這個名字看到你的回覆。</div></div></div><input class="input" data-nickname placeholder="例如：爸爸、媽媽、永程" maxlength="20" value="${esc(getName())}"></div><div class="card groupCard"><div class="section-label">CREATE GROUP</div><div class="groupTitle" style="margin-top:6px"><div class="groupIcon">✨</div><div><div class="settingtitle">建立新群組</div><div class="notice">建立後會得到 8 碼代碼，直接分享給家人。</div></div></div><input class="input" data-groupname placeholder="例如：永程家" maxlength="30"><button class="btn primary" data-create-group style="margin-top:10px">建立我的群組</button></div><div class="card groupCard"><div class="section-label">JOIN GROUP</div><div class="groupTitle" style="margin-top:6px"><div class="groupIcon">🔗</div><div><div class="settingtitle">加入現有群組</div><div class="notice">輸入家人給你的 8 碼群組代碼。</div></div></div><input class="input" data-joincode placeholder="例如：AB7K2M9Q" maxlength="8" autocapitalize="characters" style="text-transform:uppercase"><button class="btn secondary" data-join-group style="margin-top:10px">加入家人群組</button></div>`}
+function membersHtml(){return groupMembers.length?groupMembers.map(m=>`<div class="member"><div class="avatar">${(m.name||'成員').slice(0,1)}</div><div class="settingtext"><div class="settingtitle">${esc(m.name||'成員')}${m.uid===fb.user?.uid?'（你）':''}</div><div class="settingdesc">● 已加入群組</div></div></div>`).join(''):'<div class="noticeEmpty">還沒有成員資料</div>'}
+function messageChoice(x){return esc(x.label||(x.choice==='home'?settings.replyHomeLabel:settings.replyAwayLabel))}
+function messagesHtml(){return groupMessages.length?groupMessages.map(x=>{const when=x.createdAt?.toDate?x.createdAt.toDate():new Date(x.createdAt||Date.now());return `<div class="msg"><div class="msghead"><span class="msgname"><span class="msgDot"></span>${esc(x.name||'成員')}${x.uid===fb.user?.uid?'（你）':''}</span><span class="msgtime">${when.toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span></div><div class="msgbody">${x.choice==='home'?'🏠':'🚫'} ${messageChoice(x)}</div></div>`}).join(''):'<div class="noticeEmpty">目前還沒有晚餐答覆<br>家人回覆後會即時出現在這裡</div>'}
+function render(){document.getElementById('app').innerHTML=page==='home'?home():page==='days'?days():page==='history'?history():page==='group'?groupPage():settingsPage();if(page==='group'&&fb.db&&fb.groupId)renderGroupParts()}
+function renderGroupParts(){const m=document.getElementById('members'),x=document.getElementById('messages');if(m)m.innerHTML=membersHtml();if(x)x.innerHTML=messagesHtml()}
+function history(){const sorted=[...logs].sort((a,b)=>b.at.localeCompare(a.at));const content=sorted.length?sorted.map(l=>`<div class="card log"><div class="logdate"><div class="settingtitle">${formatDate(l.date)}</div><div class="muted">${esc(l.time)}</div></div><span class="badge ${l.choice==='home'?'home':'away'}">${esc(l.label||(l.choice==='home'?settings.replyHomeLabel:settings.replyAwayLabel))}</span></div>`).join(''):`<div class="card empty">還沒有任何紀錄</div>`;return `${header('HISTORY','紀錄','依日期查看過去的選擇')}<section class="section">${content}${sorted.length?'<button class="btn danger" data-clear>清除全部紀錄</button>':''}</section>${nav()}`}
+function formatDate(k){const [y,m,d]=k.split('-').map(Number),dt=new Date(y,m-1,d);return `${m}月${d}日（${SHORT[dayIndex(dt)]}）`}
+async function askPermission(){if(!('Notification'in window)){permission='unsupported';toast('此瀏覽器不支援網頁通知');render();return}try{permission=await Notification.requestPermission();toast(permission==='granted'?'通知已允許':'通知未允許');render()}catch{toast('無法取得通知權限')}}
+async function notify(text=settings.body,title=settings.title,meta={}){if(!('Notification'in window)||Notification.permission!=='granted')return false;try{if('serviceWorker'in navigator){const reg=await navigator.serviceWorker.ready;const options={body:text,tag:meta.tag||'dinner-reminder',icon:'./icon-192.png',badge:'./icon-192.png',renotify:true,requireInteraction:true,data:{time:meta.time||'',kind:meta.kind||'dinner'}};if(meta.actions!==false)options.actions=[{action:'home',title:settings.replyHomeLabel},{action:'away',title:settings.replyAwayLabel}];await reg.showNotification(title,options);return true}new Notification(title,{body:text});return true}catch(e){console.error(e);try{new Notification(title,{body:text});return true}catch{return false}}}
+function addLog(choice,time=new Date().toTimeString().slice(0,5)){const d=dateKey(),label=choice==='home'?settings.replyHomeLabel:settings.replyAwayLabel;logs=[{id:d+'-'+Date.now(),date:d,time,choice,label,at:new Date().toISOString()},...logs.filter(x=>x.date!==d)];save();toast('已記錄：'+label);if(fb.db&&fb.groupId)publishReply(choice,time,label);render()}
+function showChoiceBox(reminderTime){if(choiceBoxShown)return;choiceBoxShown=true;const sec=document.querySelector('.section');if(!sec)return;const box=document.createElement('div');box.className='card';box.innerHTML=`<div class="settingtitle">${esc(settings.body)}</div><div class="notice">提醒時間 ${esc(reminderTime)}</div><div class="choice"><button class="homebtn" data-choice="home">${esc(settings.replyHomeLabel)}</button><button class="awaybtn" data-choice="away">${esc(settings.replyAwayLabel)}</button></div>`;sec.prepend(box);box.addEventListener('click',e=>{const c=e.target.closest('[data-choice]');if(c){addLog(c.dataset.choice,reminderTime);box.remove();choiceBoxShown=false}})}
+function currentReminder(){const now=new Date(),i=dayIndex(now);if(!active(i))return null;const time=settings.days[i].time||settings.defaultTime;const [h,m]=time.split(':').map(Number);const target=new Date(now);target.setHours(h||0,m||0,0,0);const diff=now.getTime()-target.getTime();if(diff>=0&&diff<90000)return{time,at:target,i};return null}
+async function checkReminder(){const r=currentReminder();if(!r)return;const key=dateKey(r.at)+'-'+r.i+'-'+r.time;if(firedKey===key)return;firedKey=key;await notify(settings.body,settings.title,{time:r.time,kind:'dinner',tag:'dinner-'+dateKey(r.at)});showChoiceBox(r.time)}
+function firebaseConfig(){try{return JSON.parse(localStorage.getItem(FIREKEY)||'null')}catch{return null}}
+function normalizeFirebaseConfig(raw){let text=String(raw||'').trim();if(!text)return null;const first=text.indexOf('{'),last=text.lastIndexOf('}');if(first>=0&&last>first)text=text.slice(first,last+1);try{const cfg=JSON.parse(text);if(!cfg.apiKey||!cfg.authDomain||!cfg.projectId||!cfg.appId)throw new Error('missing');return cfg}catch{}const pick=k=>{const re=new RegExp('(?:"'+k+'"|'+k+')\\s*:\\s*["\\\']([^"\\\']+)["\\\']');const m=text.match(re);return m?m[1]:''};const cfg={apiKey:pick('apiKey'),authDomain:pick('authDomain'),projectId:pick('projectId'),storageBucket:pick('storageBucket'),messagingSenderId:pick('messagingSenderId'),appId:pick('appId')};return cfg.apiKey&&cfg.authDomain&&cfg.projectId&&cfg.appId?cfg:null}
+async function stopGroupSync(){if(fb.unsubMembers){fb.unsubMembers();fb.unsubMembers=null}if(fb.unsubMessages){fb.unsubMessages();fb.unsubMessages=null}groupMembers=[];groupMessages=[];groupReady=false;groupInitialSnapshot=true;knownMessageIds=new Set()}
+async function initFirebase(){const cfg=firebaseConfig();if(!cfg||!window.firebase)return false;try{await stopGroupSync();if(fb.app){const o=fb.app.options||{};if(o.projectId!==cfg.projectId||o.appId!==cfg.appId||o.apiKey!==cfg.apiKey){await fb.app.delete();fb.app=null}}if(!fb.app){const same=firebase.apps.find(a=>{const o=a.options||{};return o.projectId===cfg.projectId&&o.appId===cfg.appId&&o.apiKey===cfg.apiKey});fb.app=same||firebase.initializeApp(cfg)}fb.auth=fb.app.auth();fb.db=fb.app.firestore();if(!fb.auth.currentUser){const r=await fb.auth.signInAnonymously();fb.user=r.user}else fb.user=fb.auth.currentUser;if(fb.groupId)startGroupSync();return !!fb.user}catch(e){console.error('Firebase init failed',e);fb.db=null;fb.user=null;toast('Firebase 連線失敗：'+firebaseError(e));return false}}
+function firebaseError(e){const code=e?.code||'';const msg=String(e?.message||'');if(code.includes('auth/operation-not-allowed'))return'請到 Authentication → Sign-in method → Anonymous 啟用匿名登入';if(code.includes('permission-denied')||code.includes('PERMISSION_DENIED'))return'Firestore Rules 拒絕這個操作：請重新貼上本版規則並 Publish';if(code.includes('failed-precondition'))return'Firestore 尚未建立完成，或需要建立索引';if(code==='group-not-found'||msg==='GROUP_NOT_FOUND')return'找不到這個 8 碼群組';if(code==='group-code-collision')return'群組代碼產生失敗，請再試一次';return code||msg||'請檢查 Firebase 設定'}
+async function askFirebase(){const old=firebaseConfig();const raw=prompt('請貼上 Firebase「Web App SDK 設定」整段內容。\n\n可貼 const firebaseConfig = { ... } 或直接貼 { ... }。\n不要只貼 API Key。',old?JSON.stringify(old,null,2):'');if(raw===null)return;const cfg=normalizeFirebaseConfig(raw);if(!cfg){toast('讀不到 Firebase 設定：請完整複製 Web App SDK 設定');return}localStorage.setItem(FIREKEY,JSON.stringify(cfg));if(fb.app){try{await stopGroupSync();await fb.app.delete()}catch(e){console.warn('Firebase app reset',e)}fb.app=null}fb.auth=null;fb.db=null;fb.user=null;const ok=await initFirebase();render();toast(ok?'✓ Firebase 雲端連線成功':'連線失敗：請檢查匿名登入與 Firestore Rules')}
+function randomCode(){const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let s='';for(let i=0;i<8;i++)s+=chars[Math.floor(Math.random()*chars.length)];return s}
+async function createGroup(){const btn=document.querySelector('[data-create-group]');if(btn){btn.disabled=true;btn.textContent='建立中…'}if(!fb.db||!fb.user){toast('Firebase 尚未完成連線，請先確認匿名登入已啟用');if(btn){btn.disabled=false;btn.textContent='建立我的群組'}return}const name=(document.querySelector('[data-groupname]')?.value||'永程家').trim()||'永程家';const nickname=(document.querySelector('[data-nickname]')?.value||'成員').trim()||'成員';localStorage.setItem(USERKEY,nickname);try{let code='';for(let i=0;i<8;i++){const candidate=randomCode(),ref=fb.db.collection('groups').doc(candidate);try{await fb.db.runTransaction(async tx=>{const snap=await tx.get(ref);if(snap.exists)throw new Error('GROUP_EXISTS');tx.set(ref,{name,createdAt:firebase.firestore.FieldValue.serverTimestamp(),createdBy:fb.user.uid})});code=candidate;break}catch(e){if(e.message==='GROUP_EXISTS')continue;throw e}}if(!code)throw Object.assign(new Error('無法產生可用群組代碼'),{code:'group-code-collision'});await fb.db.collection('groups').doc(code).collection('members').doc(fb.user.uid).set({uid:fb.user.uid,name:nickname,joinedAt:firebase.firestore.FieldValue.serverTimestamp()});fb.groupId=code;localStorage.setItem(GROUPKEY,code);localStorage.setItem('dinner-group-name-v2',name);page='group';render();startGroupSync();toast('群組建立成功：'+code)}catch(e){console.error('createGroup',e);toast('建立失敗：'+firebaseError(e))}finally{if(btn){btn.disabled=false;btn.textContent='建立我的群組'}}}
+async function joinGroup(){const btn=document.querySelector('[data-join-group]');if(btn){btn.disabled=true;btn.textContent='加入中…'}if(!fb.db||!fb.user){toast('Firebase 尚未完成連線，請先確認匿名登入已啟用');if(btn){btn.disabled=false;btn.textContent='加入家人群組'}return}const code=(document.querySelector('[data-joincode]')?.value||'').trim().toUpperCase();const nickname=(document.querySelector('[data-nickname]')?.value||'成員').trim()||'成員';if(!/^[A-Z0-9]{8}$/.test(code)){toast('請輸入 8 碼群組代碼');if(btn){btn.disabled=false;btn.textContent='加入家人群組'}return}localStorage.setItem(USERKEY,nickname);try{const ref=fb.db.collection('groups').doc(code),snap=await ref.get();if(!snap.exists)throw Object.assign(new Error('GROUP_NOT_FOUND'),{code:'group-not-found'});await ref.collection('members').doc(fb.user.uid).set({uid:fb.user.uid,name:nickname,joinedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});fb.groupId=code;localStorage.setItem(GROUPKEY,code);localStorage.setItem('dinner-group-name-v2',snap.data()?.name||'家庭群組');page='group';render();startGroupSync();toast('已加入 '+(snap.data()?.name||'家庭群組'))}catch(e){console.error('joinGroup',e);toast('加入失敗：'+firebaseError(e))}finally{if(btn){btn.disabled=false;btn.textContent='加入家人群組'}}}
+async function publishReply(choice,time,label){if(!fb.db||!fb.groupId||!fb.user)return;try{await fb.db.collection('groups').doc(fb.groupId).collection('messages').add({uid:fb.user.uid,name:getName(),choice,label,time,createdAt:firebase.firestore.FieldValue.serverTimestamp()})}catch(e){console.error('publishReply',e);toast('群組同步失敗：'+firebaseError(e))}}
+async function startGroupSync(){if(!fb.db||!fb.user||!fb.groupId)return;await stopGroupSync();const groupId=fb.groupId;const gref=fb.db.collection('groups').doc(groupId);fb.unsubMembers=gref.collection('members').onSnapshot(s=>{groupMembers=s.docs.map(d=>({uid:d.id,...d.data()})).sort((a,b)=>(a.name||'').localeCompare(b.name||''));groupReady=true;renderGroupParts()},e=>{console.error(e);toast('讀取群組成員失敗：'+firebaseError(e))});knownMessageIds=new Set();groupInitialSnapshot=true;fb.unsubMessages=gref.collection('messages').limit(50).onSnapshot(s=>{const docs=s.docs.map(d=>({id:d.id,...d.data()}));docs.sort((a,b)=>{const at=a.createdAt?.toMillis?a.createdAt.toMillis():0,bt=b.createdAt?.toMillis?b.createdAt.toMillis():0;return bt-at});const seenKey='dinner-seen-messages-'+groupId;let saved=[];try{saved=JSON.parse(localStorage.getItem(seenKey)||'[]')}catch{}const savedSet=new Set(saved);if(groupInitialSnapshot){docs.forEach(d=>{knownMessageIds.add(d.id);savedSet.add(d.id)});groupInitialSnapshot=false}else{for(const d of docs){if(!knownMessageIds.has(d.id)&&!savedSet.has(d.id)){knownMessageIds.add(d.id);savedSet.add(d.id);if(d.uid!==fb.user.uid){const label=d.label||(d.choice==='home'?settings.replyHomeLabel:settings.replyAwayLabel);notify((d.name||'群組成員')+' 的回覆',label,{kind:'group',tag:'group-'+d.id,actions:false}).catch(()=>{})}}}}localStorage.setItem(seenKey,JSON.stringify([...savedSet].slice(-100)));groupMessages=docs;renderGroupParts()},e=>{console.error(e);toast('讀取群組通知紀錄失敗：'+firebaseError(e))})}
+async function leaveGroup(){if(!fb.groupId)return;try{if(fb.db&&fb.user)await fb.db.collection('groups').doc(fb.groupId).collection('members').doc(fb.user.uid).delete()}catch(e){console.error(e)}await stopGroupSync();fb.groupId='';localStorage.removeItem(GROUPKEY);localStorage.removeItem('dinner-group-name-v2');page='group';toast('已離開群組');render()}
+function updateName(value){const name=value.trim()||'成員';localStorage.setItem(USERKEY,name);if(fb.db&&fb.groupId&&fb.user)fb.db.collection('groups').doc(fb.groupId).collection('members').doc(fb.user.uid).set({name},{merge:true}).catch(e=>console.error('updateName',e))}
+function handle(e){const t=e.target.closest('button');if(!t)return;if(t.dataset.choice){return}if(t.dataset.page){page=t.dataset.page;render();return}if(t.dataset.toggle!==undefined){const i=+t.dataset.toggle;settings.days[i].enabled=!settings.days[i].enabled;save();render();return}if(t.dataset.weekend!==undefined){settings.weekendOn=!settings.weekendOn;save();render();return}if(t.dataset.notify!==undefined){settings.notificationsOn=!settings.notificationsOn;save();render();return}if(t.dataset.permission!==undefined){askPermission();return}if(t.dataset.test!==undefined){notify('這是一則測試通知','今晚回家吃飯嗎？',{time:new Date().toTimeString().slice(0,5)});return}if(t.dataset.clear!==undefined){if(confirm('確定要清除全部紀錄嗎？')){logs=[];save();render()}return}if(t.dataset.firebase!==undefined){askFirebase();return}if(t.dataset.createGroup!==undefined){createGroup();return}if(t.dataset.joinGroup!==undefined){joinGroup();return}if(t.dataset.copyCode!==undefined){navigator.clipboard?.writeText(fb.groupId).then(()=>toast('群組代碼已複製')).catch(()=>toast('群組代碼：'+fb.groupId));return}if(t.dataset.leaveGroup!==undefined){if(confirm('確定要離開目前群組嗎？'))leaveGroup();return}if(t.dataset.previewHome!==undefined||t.dataset.previewAway!==undefined)return}
+document.addEventListener('click',handle);
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset.time!==undefined){settings.days[+t.dataset.time].time=t.value||'19:00';save();render()}if(t.dataset.title!==undefined){settings.title=t.value;save()}if(t.dataset.body!==undefined){settings.body=t.value;save()}if(t.dataset.replyHome!==undefined){settings.replyHomeLabel=t.value.trim()||defaults.replyHomeLabel;save();render()}if(t.dataset.replyAway!==undefined){settings.replyAwayLabel=t.value.trim()||defaults.replyAwayLabel;save();render()}});
+document.addEventListener('input',e=>{const t=e.target;if(t.dataset.nickname!==undefined)updateName(t.value);if(t.dataset.title!==undefined){settings.title=t.value;save()}if(t.dataset.body!==undefined){settings.body=t.value;save()}if(t.dataset.replyHome!==undefined){settings.replyHomeLabel=t.value||defaults.replyHomeLabel;save()}if(t.dataset.replyAway!==undefined){settings.replyAwayLabel=t.value||defaults.replyAwayLabel;save()}});
+async function handleQuickReply(choice,time){const key='dinner-quick-reply-'+dateKey()+'-'+choice+'-'+(time||'');if(localStorage.getItem(key))return;localStorage.setItem(key,'1');addLog(choice,time||new Date().toTimeString().slice(0,5));if(location.search)history.replaceState({},'',location.pathname+location.hash)}
+async function handlePendingReply(){const params=new URLSearchParams(location.search),choice=params.get('reply');if(choice!=='home'&&choice!=='away')return;await handleQuickReply(choice,params.get('time')||'')}
+if('serviceWorker'in navigator)navigator.serviceWorker.addEventListener('message',e=>{if(e.data?.type==='quick-reply')handleQuickReply(e.data.choice,e.data.time||'')});
+async function start(){render();if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(e=>console.error('SW',e));if(firebaseConfig())await initFirebase();render();await handlePendingReply();checkReminder();setInterval(checkReminder,5000)}
+start();
+})();</script></body></html>
